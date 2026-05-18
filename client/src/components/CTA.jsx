@@ -73,7 +73,7 @@ export function CTA() {
     <section
       id="cta"
       ref={ref}
-      className="relative overflow-hidden py-32 md:py-44"
+      className="relative overflow-hidden py-20 md:py-32 lg:py-44"
       style={{ background: "var(--gradient-aurora)" }}
     >
       <img
@@ -108,7 +108,7 @@ export function CTA() {
         </div>
 
         {/* Cinematic Premium Enquiry Form */}
-        <div className="mt-12 rounded-[28px] border border-foreground/10 bg-background/50 p-8 backdrop-blur-md shadow-[0_30px_70px_rgba(0,0,0,0.06)] md:p-12 max-w-2xl mx-auto">
+        <div className="mt-12 rounded-[28px] border border-foreground/10 bg-background/50 p-6 sm:p-8 backdrop-blur-md shadow-[0_30px_70px_rgba(0,0,0,0.06)] md:p-12 max-w-2xl mx-auto">
           {status === "success" ? (
             <div className="text-center py-10 animate-[fadeIn_0.6s_ease-out]">
               <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">

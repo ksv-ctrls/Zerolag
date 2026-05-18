@@ -79,7 +79,7 @@ export function Why() {
     <section
       id="why"
       ref={root}
-      className="relative overflow-hidden py-32 md:py-44"
+      className="relative overflow-hidden py-20 md:py-32 lg:py-44"
       style={{ background: "var(--ink)", color: "white" }}
     >
       <img
@@ -101,17 +101,17 @@ export function Why() {
           </span>
         </h2>
 
-        <div className="mt-20 grid gap-y-12 border-y border-white/10 py-12 md:grid-cols-4">
+        <div className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 border-y border-white/10 py-10 md:py-12">
           {stats.map((s) => (
             <div key={s.label} className="px-2">
-              <div className="flex items-baseline gap-1 font-display text-6xl md:text-7xl">
+              <div className="flex items-baseline gap-1 font-display text-5xl md:text-7xl">
                 {typeof s.v === "number" ? (
                   <>
                     <span data-counter={s.v}>0</span>
                     <span className="text-2xl text-white/60">{s.suffix}</span>
                   </>
                 ) : (
-                  <span className="text-5xl md:text-6xl text-white font-display tracking-tight leading-none">
+                  <span className="text-4xl md:text-6xl text-white font-display tracking-tight leading-none">
                     {s.v}
                   </span>
                 )}
@@ -121,7 +121,7 @@ export function Why() {
           ))}
         </div>
 
-        <div data-pillars className="mt-24 grid gap-12 md:grid-cols-2">
+        <div data-pillars className="mt-16 md:mt-24 grid gap-8 md:gap-12 md:grid-cols-2">
           {pillars.map((p, i) => (
             <div
               key={p.t}

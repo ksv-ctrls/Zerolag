@@ -90,14 +90,14 @@ export function Work() {
 
       <div
         ref={track}
-        className="flex w-max gap-6 pl-6 pr-24 will-change-transform"
+        className="flex flex-col min-[900px]:flex-row min-[900px]:w-max gap-8 min-[900px]:gap-6 px-6 min-[900px]:px-0 min-[900px]:pl-6 min-[900px]:pr-24 w-full will-change-transform mx-auto max-w-7xl min-[900px]:max-w-none"
       >
         {work.map((w) => (
           <a
             key={w.n}
             href="#"
             data-cursor
-            className="group relative block w-[88vw] max-w-[680px] flex-none overflow-hidden rounded-3xl border border-foreground/10 bg-card md:w-[60vw]"
+            className="group relative block w-full min-[900px]:w-[88vw] min-[900px]:max-w-[680px] flex-none overflow-hidden rounded-3xl border border-foreground/10 bg-card"
           >
             <div className="aspect-[16/11] overflow-hidden">
               <img
@@ -109,12 +109,12 @@ export function Work() {
                 className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
               />
             </div>
-            <div className="flex items-end justify-between p-8">
+            <div className="flex items-end justify-between p-6 sm:p-8">
               <div>
                 <div className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/45">
                   {w.n} · {w.tag}
                 </div>
-                <div className="mt-3 font-display text-3xl md:text-4xl">
+                <div className="mt-3 font-display text-2xl sm:text-3xl md:text-4xl">
                   {w.title}
                 </div>
                 <div className="mt-1 text-sm text-foreground/55">
@@ -122,7 +122,7 @@ export function Work() {
                 </div>
               </div>
               <span
-                className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-foreground/15 transition-all duration-500 group-hover:rotate-[-45deg] group-hover:border-foreground"
+                className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-foreground/15 transition-all duration-500 group-hover:rotate-[-45deg] group-hover:border-foreground shrink-0"
               >
                 <svg
                   className="h-4 w-4"
@@ -137,9 +137,9 @@ export function Work() {
             </div>
           </a>
         ))}
-        <div className="grid w-[60vw] flex-none place-items-center px-12 text-center">
+        <div className="grid w-full min-[900px]:w-[60vw] min-[900px]:flex-none place-items-center px-12 py-16 min-[900px]:py-0 text-center border border-foreground/10 rounded-3xl bg-card/40">
           <div>
-            <div className="font-display text-4xl text-balance">
+            <div className="font-display text-3xl sm:text-4xl text-balance">
               + 80 more cases <br />
               <span className="italic" style={{ color: "var(--blood)" }}>
                 under NDA.

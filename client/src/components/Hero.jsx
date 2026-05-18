@@ -46,7 +46,7 @@ export function Hero() {
         aria-hidden
         width={1536}
         height={1536}
-        className="pointer-events-none absolute right-[-10%] top-[8%] z-0 w-[58vw] max-w-[820px] select-none"
+        className="pointer-events-none absolute right-[-5%] sm:right-[-10%] top-[20%] sm:top-[8%] z-0 w-[65vw] sm:w-[58vw] max-w-[820px] select-none opacity-45 sm:opacity-100"
         style={{
           transform: "translate3d(var(--mx,0), var(--my,0), 0)",
           filter: "drop-shadow(0 40px 80px rgba(0,0,0,0.18))",

@@ -125,7 +125,7 @@ export function Services() {
     <section
       id="services"
       ref={root}
-      className="relative py-[140px] px-6 md:px-12 lg:px-20 overflow-hidden"
+      className="relative py-20 md:py-32 lg:py-[140px] px-6 md:px-12 lg:px-20 overflow-hidden"
       style={{ background: "#050508", color: "#ffffff" }}
     >
       <style>{`

@@ -1,6 +1,8 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ksvImg from "@/assets/ksv.jpeg";
+import spImg from "@/assets/sp.png";
 
 const founders = [
   {
@@ -11,13 +13,7 @@ const founders = [
     glowColor: "var(--electric)",
     accentColor: "rgba(0, 71, 255, 0.4)",
     initials: "KS",
-    signatureSvg: (
-      <svg className="w-full h-full opacity-10 transition-all duration-700 group-hover:opacity-30 group-hover:scale-105" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
-        <circle cx="50" cy="50" r="30" strokeDasharray="3 3" className="animate-[spin_40s_linear_infinite]" />
-        <path d="M20 50 Q50 20 80 50 T140 50" strokeDasharray="1 1" />
-        <polygon points="50,20 80,80 20,80" className="origin-center animate-[spin_25s_linear_infinite]" />
-      </svg>
-    ),
+    img: ksvImg,
   },
   {
     n: "Samuel Paul",
@@ -27,14 +23,7 @@ const founders = [
     glowColor: "var(--blood)",
     accentColor: "rgba(192, 0, 26, 0.4)",
     initials: "SP",
-    signatureSvg: (
-      <svg className="w-full h-full opacity-10 transition-all duration-700 group-hover:opacity-30 group-hover:scale-105" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="0.5">
-        <circle cx="50" cy="50" r="25" />
-        <circle cx="50" cy="50" r="35" strokeDasharray="5 5" className="animate-[spin_60s_linear_infinite]" />
-        <path d="M30 30 C50 60, 40 10, 70 70" />
-        <rect x="35" y="35" width="30" height="30" rx="4" className="origin-center animate-[spin_18s_linear_infinite]" />
-      </svg>
-    ),
+    img: spImg,
   },
 ];
 
@@ -45,7 +34,7 @@ export function Team() {
     if (typeof window === "undefined") return;
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
-      gsap.fromTo("[data-team-card]", 
+      gsap.fromTo("[data-team-card]",
         { y: 60, opacity: 0 },
         {
           y: 0,
@@ -102,9 +91,9 @@ export function Team() {
   };
 
   return (
-    <section id="team" ref={root} className="relative py-32 md:py-44" style={{ background: "var(--ink)", color: "white" }}>
+    <section id="team" ref={root} className="relative py-20 md:py-32 lg:py-44 overflow-hidden" style={{ background: "var(--ink)", color: "white" }}>
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-20 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="mb-16 md:mb-20 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
             <div className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-white/40">
               Meet the studio
@@ -129,16 +118,31 @@ export function Team() {
               data-cursor
               onMouseMove={onTilt}
               onMouseLeave={onLeave}
-              className="group relative overflow-hidden rounded-[32px] border border-white/5 bg-white/[0.01] p-10 md:p-14 flex flex-col justify-between aspect-[3/4] md:aspect-[4/5] transition-all duration-500 ease-out will-change-transform hover:bg-white/[0.03] hover:border-white/10 cursor-none"
+              className="group relative overflow-hidden rounded-[32px] border border-white/5 bg-white/[0.01] p-6 sm:p-10 md:p-14 flex flex-col justify-between aspect-auto min-h-[460px] sm:aspect-[3/4] md:aspect-[4/5] sm:min-h-0 transition-all duration-500 ease-out will-change-transform hover:bg-white/[0.03] hover:border-white/10 cursor-none"
               style={{
                 transformStyle: "preserve-3d",
                 boxShadow: "0 25px 60px -15px rgba(0,0,0,0.5)",
               }}
             >
+              {/* Background Photo & Gradient Overlay */}
+              <div className="pointer-events-none absolute inset-0 z-0">
+                <img
+                  src={f.img}
+                  alt={f.n}
+                  className="w-full h-full object-cover opacity-70 transition-transform duration-1000 ease-out group-hover:scale-105 group-hover:opacity-90"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: "linear-gradient(to top, var(--ink) 0%, color-mix(in oklab, var(--ink) 40%, transparent) 50%, transparent 100%)"
+                  }}
+                />
+              </div>
+
               {/* Dynamic light gradient trail */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 opacity-0 blur-[80px] transition-opacity duration-1000 group-hover:opacity-30"
+                className="pointer-events-none absolute inset-0 opacity-0 blur-[80px] transition-opacity duration-1000 group-hover:opacity-40 z-0"
                 style={{
                   background: `radial-gradient(circle at var(--mx, 50%) var(--my, 50%), ${f.accentColor} 0%, transparent 60%)`,
                 }}
@@ -162,10 +166,7 @@ export function Team() {
                 />
               </div>
 
-              {/* Middle Row: Stylized Cybermatic Orb / Parallax Mesh Art */}
-              <div className="w-full h-40 relative flex items-center justify-center my-6">
-                {f.signatureSvg}
-              </div>
+              <div className="flex-1" />
 
               {/* Bottom Row: Founder Metadata & Dynamic URL Button */}
               <div className="relative z-10">
