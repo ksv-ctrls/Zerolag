@@ -1,38 +1,38 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import w1 from "@/assets/work-1.jpg";
-import w2 from "@/assets/work-2.jpg";
-import w3 from "@/assets/work-3.jpg";
-import w4 from "@/assets/work-4.jpg";
+import w1 from "@/assets/work/work-1.jpg";
+import w2 from "@/assets/work/work-2.jpg";
+import w3 from "@/assets/work/work-3.jpg";
+import w4 from "@/assets/work/work-4.png";
 
 const work = [
   {
     n: "01",
-    title: "Helios OS",
-    client: "Helios Labs",
-    tag: "Product · 2025",
+    title: "Spatial UI Dashboards",
+    client: "Internal Product",
+    tag: "UX/UI · Next-Gen HUD",
     img: w1,
   },
   {
     n: "02",
-    title: "Maison Étoile",
-    client: "Maison Étoile",
-    tag: "E-commerce · 2025",
+    title: "3D Scroll Parallax",
+    client: "E-Commerce",
+    tag: "Motion · Glassmorphism",
     img: w2,
   },
   {
     n: "03",
-    title: "Field Notes",
-    client: "Field Notes Co.",
-    tag: "Brand · 2024",
+    title: "Geometric Canvas Motion",
+    client: "Branding",
+    tag: "WebGL · SVG Animation",
     img: w3,
   },
   {
     n: "04",
-    title: "Cobalt Wallet",
-    client: "Cobalt",
-    tag: "Mobile · 2024",
+    title: "WebGL 3D Experiences",
+    client: "Interactive Web",
+    tag: "Three.js · ScrollTrigger",
     img: w4,
   },
 ];
@@ -68,17 +68,17 @@ export function Work() {
   }, []);
 
   return (
-    <section id="work" ref={root} className="relative overflow-hidden bg-background py-24 md:py-32">
+    <section id="work" ref={root} className="relative overflow-hidden bg-background py-12 md:py-16">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-16 flex items-end justify-between gap-6">
+        <div className="mb-8 md:mb-12 flex items-end justify-between gap-6">
           <div>
             <div className="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-foreground/50">
               Selected work
             </div>
             <h2 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] text-balance">
-              Cases that{" "}
+              Glimpses of what we can{" "}
               <span className="italic" style={{ color: "var(--electric)" }}>
-                moved markets.
+                engineer for you.
               </span>
             </h2>
           </div>
@@ -97,19 +97,17 @@ export function Work() {
             key={w.n}
             href="#"
             data-cursor
-            className="group relative block w-full min-[900px]:w-[88vw] min-[900px]:max-w-[680px] flex-none overflow-hidden rounded-3xl border border-foreground/10 bg-card"
+            className="group relative flex flex-col w-[85vw] min-[900px]:w-[45vw] min-[900px]:max-w-[550px] h-[50vh] min-h-[340px] max-h-[460px] flex-none overflow-hidden rounded-3xl border border-foreground/10 bg-card"
           >
-            <div className="aspect-[16/11] overflow-hidden">
+            <div className="relative flex-1 overflow-hidden bg-muted">
               <img
                 src={w.img}
                 alt={w.title}
                 loading="lazy"
-                width={1280}
-                height={896}
-                className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
               />
             </div>
-            <div className="flex items-end justify-between p-6 sm:p-8">
+            <div className="flex shrink-0 items-end justify-between p-5 sm:p-6 bg-card">
               <div>
                 <div className="font-mono text-xs uppercase tracking-[0.2em] text-foreground/45">
                   {w.n} · {w.tag}

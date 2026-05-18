@@ -118,14 +118,17 @@ export function Team() {
               data-cursor
               onMouseMove={onTilt}
               onMouseLeave={onLeave}
-              className="group relative overflow-hidden rounded-[32px] border border-white/5 bg-white/[0.01] p-6 sm:p-10 md:p-14 flex flex-col justify-between aspect-auto min-h-[460px] sm:aspect-[3/4] md:aspect-[4/5] sm:min-h-0 transition-all duration-500 ease-out will-change-transform hover:bg-white/[0.03] hover:border-white/10 cursor-none"
+              className="group relative rounded-[32px] border border-white/5 bg-white/[0.01] p-6 sm:p-10 md:p-14 flex flex-col justify-between aspect-auto min-h-[460px] sm:aspect-[3/4] md:aspect-[4/5] sm:min-h-0 transition-all duration-500 ease-out will-change-transform hover:bg-white/[0.03] hover:border-white/10 cursor-none"
               style={{
                 transformStyle: "preserve-3d",
                 boxShadow: "0 25px 60px -15px rgba(0,0,0,0.5)",
               }}
             >
               {/* Background Photo & Gradient Overlay */}
-              <div className="pointer-events-none absolute inset-0 z-0">
+              <div 
+                className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-[32px]"
+                style={{ backgroundColor: "var(--ink)" }}
+              >
                 <img
                   src={f.img}
                   alt={f.n}
@@ -139,20 +142,19 @@ export function Team() {
                 />
               </div>
 
-              {/* Dynamic light gradient trail */}
+              {/* Dynamic hover shadow around the card */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 opacity-0 blur-[80px] transition-opacity duration-1000 group-hover:opacity-40 z-0"
+                className="pointer-events-none absolute inset-0 opacity-0 blur-[60px] transition-opacity duration-1000 group-hover:opacity-100 -z-10"
                 style={{
-                  background: `radial-gradient(circle at var(--mx, 50%) var(--my, 50%), ${f.accentColor} 0%, transparent 60%)`,
+                  background: `radial-gradient(circle at var(--mx, 50%) var(--my, 50%), ${f.accentColor} 0%, transparent 70%)`,
                 }}
               />
 
               {/* Top Row: Initials Badge & Cybernetic Mesh Icon */}
               <div className="flex items-center justify-between relative z-10">
                 <span
-                  className="font-mono text-xs tracking-[0.2em] px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] lowercase"
-                  style={{ color: "rgba(255, 255, 255, 0.5)" }}
+                  className="font-mono text-xs tracking-[0.2em] px-3.5 py-1.5 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-white font-medium lowercase shadow-lg"
                 >
                   {f.shortName}
                 </span>
