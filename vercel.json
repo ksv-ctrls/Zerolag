@@ -1,3 +1,9 @@
 {
-  "outputDirectory": "client/dist"
+  "outputDirectory": "client/dist",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://zerolag-hfps.onrender.com/api/:path*"
+    }
+  ]
 }
