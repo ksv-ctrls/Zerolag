@@ -8,8 +8,13 @@ dotenv.config();
 const app = express();
 
 // Configure CORS to receive local client origins
+const allowedOrigins = [
+  "http://localhost:8080",
+  process.env.CLIENT_URL
+].filter(Boolean);
+
 app.use(cors({
-  origin: "http://localhost:8080",
+  origin: allowedOrigins,
   credentials: true
 }));
 

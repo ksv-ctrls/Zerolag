@@ -45,8 +45,9 @@ export function CTA() {
     }
 
     setStatus("submitting");
+    const API_BASE = import.meta.env.VITE_API_URL || "";
     try {
-      const res = await fetch("/api/enquiries", {
+      const res = await fetch(`${API_BASE}/api/enquiries`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
