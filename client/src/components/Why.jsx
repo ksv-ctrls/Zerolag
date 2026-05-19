@@ -12,20 +12,20 @@ const stats = [
 
 const pillars = [
   {
-    t: "Speed without compromise",
-    d: "Senior-only teams. We move at startup pace and ship work that wins awards.",
+    t: "Living Blueprints",
+    d: "Static briefs are dead. We architect your requirements directly into interactive, high-fidelity web prototypes from day one.",
   },
   {
-    t: "Craft as a discipline",
-    d: "Pixel, type, motion and code reviewed by the people who actually build them.",
+    t: "Instant Alignment",
+    d: "Frictionless sharing. Distribute secure, live staging links to stakeholders and gather contextual feedback in real-time.",
   },
   {
-    t: "Engineering excellence",
-    d: "Type-safe stacks, performance budgets and zero-regression deploys by default.",
+    t: "Iterative Precision",
+    d: "Relentless polish. We fine-tune micro-interactions, optimize physics, and calibrate performance until it's flawless.",
   },
   {
-    t: "Long-horizon partners",
-    d: "Retainers, advisory, and embedded squads — we stay long after launch.",
+    t: "Zero-Downtime Launch",
+    d: "Seamless deployment architecture. Enterprise-grade handoff, lightning-fast shipping, and absolute production reliability.",
   },
 ];
 
@@ -63,13 +63,21 @@ export function Why() {
         },
       });
 
-      gsap.from("[data-pillar]", {
-        y: 50,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.9,
-        ease: "expo.out",
-        scrollTrigger: { trigger: "[data-pillars]", start: "top 80%" },
+      gsap.utils.toArray("[data-stack-card]").forEach((card, index, cards) => {
+        if (index === cards.length - 1) return;
+        ScrollTrigger.create({
+          trigger: card,
+          start: "top 128px", 
+          endTrigger: cards[index + 1],
+          end: "top 128px",
+          scrub: true,
+          animation: gsap.to(card, {
+            scale: 0.92,
+            opacity: 0.3,
+            y: -20,
+            ease: "none",
+          }),
+        });
       });
     }, root);
     return () => ctx.revert();
@@ -79,15 +87,15 @@ export function Why() {
     <section
       id="why"
       ref={root}
-      className="relative overflow-hidden py-20 md:py-32 lg:py-44"
-      style={{ background: "var(--ink)", color: "white" }}
+      className="relative py-20 md:py-32 lg:py-44"
+      style={{ background: "var(--ink)", color: "white", overflowX: "clip", overflowY: "visible" }}
     >
       <img
         data-ribbon
         src={ribbon}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute -right-32 top-20 z-0 w-[42vw] max-w-[520px] opacity-90"
+        className="pointer-events-none absolute -right-16 -top-20 md:-top-28 z-10 w-[42vw] max-w-[520px]"
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -121,19 +129,24 @@ export function Why() {
           ))}
         </div>
 
-        <div data-pillars className="mt-16 md:mt-24 grid gap-8 md:gap-12 md:grid-cols-2">
+        <div className="mt-20 md:mt-32 flex flex-col gap-8 md:gap-16 pb-20">
           {pillars.map((p, i) => (
             <div
               key={p.t}
-              data-pillar
-              className="flex gap-6 border-t border-white/10 pt-8"
+              data-stack-card
+              className="sticky top-32 w-full border border-white/10 bg-[var(--ink)] shadow-[0_-15px_50px_-10px_rgba(255,91,91,0.25)] rounded-[32px] p-8 md:p-12 flex flex-col justify-center min-h-[40vh] will-change-transform"
+              style={{
+                zIndex: i,
+              }}
             >
-              <span className="font-mono text-xs text-white/40">
-                0{i + 1}
-              </span>
-              <div>
-                <h3 className="font-display text-3xl">{p.t}</h3>
-                <p className="mt-3 max-w-md text-white/60">{p.d}</p>
+              <div className="flex flex-col md:flex-row gap-6 md:gap-12 md:items-center">
+                <span className="font-mono text-5xl md:text-7xl md:w-32 shrink-0" style={{ color: "var(--blood)" }}>
+                  0{i + 1}
+                </span>
+                <div className="mt-2 md:mt-0">
+                  <h3 className="font-display text-4xl md:text-5xl lg:text-6xl">{p.t}</h3>
+                  <p className="mt-4 max-w-2xl text-lg md:text-2xl text-white/60 leading-relaxed font-light">{p.d}</p>
+                </div>
               </div>
             </div>
           ))}

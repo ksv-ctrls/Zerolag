@@ -138,16 +138,16 @@ export function Work() {
         <div className="grid w-full min-[900px]:w-[60vw] min-[900px]:flex-none place-items-center px-12 py-16 min-[900px]:py-0 text-center border border-foreground/10 rounded-3xl bg-card/40">
           <div>
             <div className="font-display text-3xl sm:text-4xl text-balance">
-              + 80 more cases <br />
+              Have a project in mind? <br />
               <span className="italic" style={{ color: "var(--blood)" }}>
-                under NDA.
+                Let's build it.
               </span>
             </div>
             <a
               href="#cta"
               className="mt-8 inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm transition hover:border-foreground"
             >
-              Request the full deck →
+              Get in touch →
             </a>
           </div>
         </div>
