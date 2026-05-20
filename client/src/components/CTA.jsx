@@ -82,14 +82,14 @@ export function CTA() {
         src={orb}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute -left-20 top-10 z-0 w-[34vw] max-w-[420px] opacity-90"
+        className="pointer-events-none absolute left-0 sm:-left-20 top-10 z-0 w-[24vw] sm:w-[34vw] max-w-[420px] opacity-90"
       />
       <img
         data-orb
         src={orb}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute -right-10 bottom-0 z-0 w-[26vw] max-w-[320px] opacity-80"
+        className="pointer-events-none absolute right-0 sm:-right-10 bottom-0 z-0 w-[20vw] sm:w-[26vw] max-w-[320px] opacity-80"
       />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6">

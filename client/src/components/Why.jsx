@@ -87,7 +87,7 @@ export function Why() {
     <section
       id="why"
       ref={root}
-      className="relative py-20 md:py-32 lg:py-44"
+      className="relative pt-20 md:pt-32 lg:pt-44 pb-0"
       style={{ background: "var(--ink)", color: "white", overflowX: "clip", overflowY: "visible" }}
     >
       <img
@@ -95,7 +95,7 @@ export function Why() {
         src={ribbon}
         alt=""
         aria-hidden
-        className="pointer-events-none absolute -right-16 -top-20 md:-top-28 z-10 w-[42vw] max-w-[520px]"
+        className="pointer-events-none absolute right-0 sm:-right-16 -top-20 md:-top-28 z-10 w-[32vw] sm:w-[42vw] max-w-[520px]"
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
@@ -129,7 +129,7 @@ export function Why() {
           ))}
         </div>
 
-        <div className="mt-20 md:mt-32 flex flex-col gap-8 md:gap-16 pb-20">
+        <div className="mt-20 md:mt-32 flex flex-col gap-8 md:gap-16 pb-0">
           {pillars.map((p, i) => (
             <div
               key={p.t}
@@ -150,6 +150,19 @@ export function Why() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Minimalist left-aligned transition heading at the bottom of black area */}
+        <div className="mt-12 md:mt-16 max-w-4xl text-left pb-3 md:pb-4 lg:pb-6 ml-[-8px] sm:ml-[-16px] md:ml-[-28px] lg:ml-[-40px]">
+          <span className="font-mono text-xs tracking-[0.3em] uppercase text-white/40 block mb-4">
+            Capabilities
+          </span>
+          <h3 className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.95] text-white">
+            We make{" "}
+            <span className="italic" style={{ color: "var(--blood)" }}>
+              anything possible.
+            </span>
+          </h3>
         </div>
       </div>
     </section>

@@ -93,18 +93,16 @@ export function Work() {
         className="flex flex-col min-[900px]:flex-row min-[900px]:w-max gap-8 min-[900px]:gap-6 px-6 min-[900px]:px-0 min-[900px]:pl-6 min-[900px]:pr-24 w-full will-change-transform mx-auto max-w-7xl min-[900px]:max-w-none"
       >
         {work.map((w) => (
-          <a
+          <div
             key={w.n}
-            href="#"
-            data-cursor
-            className="group relative flex flex-col w-[85vw] min-[900px]:w-[45vw] min-[900px]:max-w-[550px] h-[50vh] min-h-[340px] max-h-[460px] flex-none overflow-hidden rounded-3xl border border-foreground/10 bg-card"
+            className="relative flex flex-col w-[85vw] min-[900px]:w-[45vw] min-[900px]:max-w-[550px] h-[50vh] min-h-[340px] max-h-[460px] flex-none overflow-hidden rounded-3xl border border-foreground/10 bg-card"
           >
             <div className="relative flex-1 overflow-hidden bg-muted">
               <img
                 src={w.img}
                 alt={w.title}
                 loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
             <div className="flex shrink-0 items-end justify-between p-5 sm:p-6 bg-card">
@@ -119,21 +117,8 @@ export function Work() {
                   {w.client}
                 </div>
               </div>
-              <span
-                className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-foreground/15 transition-all duration-500 group-hover:rotate-[-45deg] group-hover:border-foreground shrink-0"
-              >
-                <svg
-                  className="h-4 w-4"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                >
-                  <path d="M7 17L17 7M9 7h8v8" />
-                </svg>
-              </span>
             </div>
-          </a>
+          </div>
         ))}
         <div className="grid w-full min-[900px]:w-[60vw] min-[900px]:flex-none place-items-center px-12 py-16 min-[900px]:py-0 text-center border border-foreground/10 rounded-3xl bg-card/40">
           <div>

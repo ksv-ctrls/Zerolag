@@ -39,14 +39,13 @@ export function Hero() {
         }}
       />
 
-      {/* Floating object */}
       <motion.img
         src={heroObject}
         alt=""
         aria-hidden
         width={1536}
         height={1536}
-        className="pointer-events-none absolute right-[-5%] sm:right-[-10%] top-[20%] sm:top-[8%] z-0 w-[65vw] sm:w-[58vw] max-w-[820px] select-none opacity-45 sm:opacity-100"
+        className="pointer-events-none absolute right-[-8%] sm:right-[-10%] top-[12%] sm:top-[8%] z-0 w-[90vw] sm:w-[58vw] max-w-[820px] select-none opacity-85 sm:opacity-100"
         style={{
           transform: "translate3d(var(--mx,0), var(--my,0), 0)",
           filter: "drop-shadow(0 40px 80px rgba(0,0,0,0.18))",
@@ -57,18 +56,18 @@ export function Hero() {
         transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-20 sm:pt-0">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="mb-8 inline-flex items-center gap-3 rounded-full border border-foreground/15 bg-background/60 px-4 py-1.5 text-xs backdrop-blur"
+          className="mb-6 sm:mb-8 inline-flex items-center gap-2 sm:gap-3 rounded-full border border-foreground/15 bg-background/60 px-3 py-1 sm:px-4 sm:py-1.5 text-[10px] sm:text-xs backdrop-blur whitespace-nowrap"
         >
           <span
             className="h-1.5 w-1.5 animate-pulse rounded-full"
             style={{ backgroundColor: "var(--blood)" }}
           />
-          <span className="font-mono uppercase tracking-[0.18em] text-foreground/70">
+          <span className="font-mono uppercase tracking-[0.08em] sm:tracking-[0.18em] text-foreground/70">
             Building For Ambitious Brands
           </span>
         </motion.div>
@@ -111,15 +110,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+          className="mt-10 flex flex-row flex-nowrap items-center justify-start gap-3 sm:gap-4"
         >
           <a
             href="#cta"
-            className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-foreground px-7 py-4 text-sm font-medium text-background"
+            className="group relative inline-flex items-center gap-2.5 sm:gap-3 overflow-hidden rounded-full bg-foreground px-5 py-3.5 sm:px-7 sm:py-4 text-xs sm:text-sm font-medium text-background whitespace-nowrap"
           >
             <span className="relative z-10">Start a project</span>
             <svg
-              className="relative z-10 h-4 w-4 transition-transform duration-500 group-hover:translate-x-1"
+              className="relative z-10 h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform duration-500 group-hover:translate-x-1"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -137,7 +136,7 @@ export function Hero() {
           </a>
           <a
             href="#team"
-            className="group inline-flex items-center gap-2 rounded-full border border-foreground/20 px-7 py-4 text-sm transition hover:border-foreground/60"
+            className="group inline-flex items-center gap-2 rounded-full border border-foreground/20 px-5 py-3.5 sm:px-7 sm:py-4 text-xs sm:text-sm transition hover:border-foreground/60 whitespace-nowrap"
           >
             Meet The Team
             <span
@@ -148,7 +147,7 @@ export function Hero() {
         </motion.div>
 
         {/* Bottom row */}
-        <div className="absolute inset-x-6 bottom-8 z-10 flex items-end justify-between text-xs text-foreground/60 md:bottom-10">
+        <div className="absolute inset-x-6 bottom-8 z-10 flex items-end justify-end md:justify-between text-xs text-foreground/60 md:bottom-10">
           <div className="hidden md:block" />
 
           <motion.div

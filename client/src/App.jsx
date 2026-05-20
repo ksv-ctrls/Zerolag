@@ -5,6 +5,7 @@ import { Hero } from "./components/Hero";
 import { Marquee } from "./components/Marquee";
 import { Services } from "./components/Services";
 import { Work } from "./components/Work";
+import { CinematicScroll } from "./components/CinematicScroll";
 import { Why } from "./components/Why";
 import { Team } from "./components/Team";
 import { CTA } from "./components/CTA";
@@ -21,6 +22,7 @@ export default function App() {
       <Services />
       <Work />
       <Why />
+      <CinematicScroll />
       <Team />
       <CTA />
       <Footer />

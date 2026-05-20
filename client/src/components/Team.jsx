@@ -105,9 +105,6 @@ export function Team() {
               </span>
             </h2>
           </div>
-          <p className="max-w-sm text-sm font-light leading-relaxed text-white/60">
-            Every Pixel Touched By The Core Team. We don’t delegate our craft — we design and build everything ourselves.
-          </p>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 max-w-5xl mx-auto">
